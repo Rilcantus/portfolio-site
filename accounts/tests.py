@@ -1,4 +1,3 @@
-from urllib import response
 from django.contrib.auth import get_user_model
 from django.test import TestCase
 from django.urls import reverse
@@ -17,8 +16,8 @@ class SignupPageTests(TestCase):
         response = self.client.post(
             reverse("signup"),
             {
-                "username": "testuser"
-                "email": "testuser@email.com"
+                "username": "testuser",
+                "email": "testuser@email.com",
                 "password1": "testpass123",
                 "password2": "testpass123",
             },

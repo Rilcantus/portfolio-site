@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     "crispy_bootstrap5",
     # Local
     "accounts.apps.AccountsConfig",
-    "pages.apps.PagesConfig"
+    "pages.apps.PagesConfig",
+    "projects.apps.ProjectsConfig",
 ]
 
 MIDDLEWARE = [
@@ -111,7 +112,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = "America/Los_Angeles"
 
 USE_I18N = True
 

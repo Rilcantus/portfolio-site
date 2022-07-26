@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="article-entry">
+    <h2>{{ object.title }}</h2>
+    <p>by {{ object.author }} | {{ object.date }}</p>
+    <p>{{ object.overview }}</p>
+</div>
+
+<p><a href="{% url 'project_edit' project.pk %}">Edit</a> |
+    <a href="{% url 'project_delete' project.pk %}">Delete</a></p>
+<p>Back to <a href="{% url 'project_list' %}">All Projects</a>.</p>
+{% endblock content %}

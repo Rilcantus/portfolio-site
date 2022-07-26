@@ -6,7 +6,7 @@
 {% for project in project_list %}
     <div class="card">
         <div class="card-header">
-            <span class="font-weight-bold">{{ project.title }}</span> &middot;
+            <span class="font-weight-bold"><a href="{% url 'project_detail' project.pk %}">{{ project.title }}</a></span> &middot;
             <span class="text-muted">by {{ project.author }} |
             {{ project.date }}</span>
         </div>
@@ -14,7 +14,8 @@
             {{ project.overview }}
         </div>
         <div class="card-footer text-center text-muted">
-            <a href="#">Edit</a> | <a href="#">Delete</a>
+            <a href="{% url 'project_edit' project.pk %}">Edit</a> |
+            <a href="{% url 'project_delete' project.pk %}">Delete</a>
         </div>
     </div>
     <br />

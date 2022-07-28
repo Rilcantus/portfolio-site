@@ -7,6 +7,20 @@
     <p>{{ object.overview }}</p>
 </div>
 
+<hr>
+<h4>Comments</h4>
+{% for projectcomment in project.projectcomment_set.all %}
+    <p>{{ projectcomment.author }} &middot; {{ projectcomment }}</p>
+{% endfor %}
+<hr>
+
+<h4>Add a comment</h4>
+    <form action="" method="post">{% csrf_token %}
+        {{ form|crispy }}
+        <button class="btn btn-success ml-2" type="submit">Save</button>
+    </form>
+
+
 <p><a href="{% url 'project_edit' project.pk %}">Edit</a> |
     <a href="{% url 'project_delete' project.pk %}">Delete</a></p>
 <p>Back to <a href="{% url 'project_list' %}">All Projects</a>.</p>

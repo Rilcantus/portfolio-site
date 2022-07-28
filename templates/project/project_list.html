@@ -11,11 +11,19 @@
             {{ project.date }}</span>
         </div>
         <div class="card-body">
-            {{ project.overview }}
-        </div>
-        <div class="card-footer text-center text-muted">
+            <p>{{ project.overview }}</p>
             <a href="{% url 'project_edit' project.pk %}">Edit</a> |
             <a href="{% url 'project_delete' project.pk %}">Delete</a>
+        </div>
+        <div class="card-footer">
+            {% for projectcomment in project.projectcomment_set.all %}
+            <p>
+                <span class="font-weight-bold">
+                    {{ projectcomment.author }} &middot;
+                </span>
+                {{ projectcomment }}
+            </p>
+            {% endfor %}
         </div>
     </div>
     <br />

@@ -38,8 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # 3rd party
+    "tailwind",
+    "theme",
     "crispy_forms",
+    "crispy_tailwind",
     "crispy_bootstrap5",
+    "django_browser_reload",
     # Local
     "accounts.apps.AccountsConfig",
     "pages.apps.PagesConfig",
@@ -54,6 +58,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
 
 ROOT_URLCONF = 'settings.urls'
@@ -133,7 +138,15 @@ AUTH_USER_MODEL = "accounts.CustomUser"
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "home"
 
-CRISPY_ALLOWED_TEMPLATE_PACK = "bootstrap5"
-CRISPY_TEMPLATE_PACL = "bootstrap5"
+CRISPY_ALLOWED_TEMPLATE_PACK = "tailwind"
+CRISPY_TEMPLATE_PACL = "tailwind"
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBacke"
+
+TAILWIND_APP_NAME = 'theme'
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
+
+NPM_BIN_PATH = "/Program Files/nodejs/npm.cmd"

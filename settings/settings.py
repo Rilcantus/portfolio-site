@@ -58,7 +58,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "django_browser_reload.middleware.BrowserReloadMiddleware",
+    "django_browser_reload.middleware.BrowserReloadMiddleware"
 ]
 
 ROOT_URLCONF = 'settings.urls'
@@ -145,8 +145,6 @@ EMAIL_BACKEND = "django.core.mail.backends.console.EmailBacke"
 
 TAILWIND_APP_NAME = 'theme'
 
-INTERNAL_IPS = [
-    "127.0.0.1",
-]
+INTERNAL_IPS = "127.0.0.1"
 
-NPM_BIN_PATH = "/Program Files/nodejs/npm.cmd"
+NPM_BIN_PATH = r"/Program Files/nodejs/npm.cmd"
